@@ -6,13 +6,20 @@ class Garage {
         this.founded = founded;
     }
 
-    getCar(color, make, model, year) {
-        this.color = color;
-        this.make = make;
-        this.model = model;
-        this.year = year
-        console.log(`The ${this.make} ${this.model} is ${this.color} and was made in ${this.year}.`)
+    getCar() {
+        const newCar = new Car(color, make, model, year);
+        console.log(newCar);
     }
+
+}
+
+function Car(color, make, model, year) {
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year
+    console.log(`The ${this.make} ${this.model} is ${this.color} and was made in ${this.year}.`);
+
 }
 
 const color = prompt("What color is the car?");
@@ -21,7 +28,8 @@ const model = prompt("What is the car model?");
 const year = prompt("What is the car year?");
 
 const garage = new Garage('London', 'The Garage', 4, 1980);
-garage.getCar(color, make, model, year);
+garage.getCar();
+
 
 
 console.log(garage);
